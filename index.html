@@ -59,7 +59,7 @@ nav>ul{flex-direction:column;align-items:stretch;padding:.5rem 1.25rem 1.5rem}}
 .hero li{display:flex;gap:.7rem;align-items:center;font-weight:600}
 .hero li::before{content:"";width:22px;height:22px;flex:none;border-radius:50%;background:var(--acc) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 12 4 4 8-8'/%3E%3C/svg%3E") center/14px no-repeat}
 .ph{position:relative;display:grid;place-items:center;text-align:center;background:linear-gradient(135deg,var(--soft),#cfe2f1);color:var(--navy);font-weight:700;font-size:.9rem;padding:1rem;overflow:hidden}
-.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 15%}
 .hero .ph{aspect-ratio:4/5;border-radius:28px 28px 28px 120px;box-shadow:0 30px 60px -20px rgba(0,0,0,.5)}
 .stat{position:absolute;left:-1rem;bottom:2rem;background:#fff;color:var(--navy);border-radius:16px;padding:.9rem 1.2rem;box-shadow:var(--shadow);font-weight:700;line-height:1.3;font-size:.9rem;z-index:2}
 .stat b{display:block;font-size:1.6rem}
@@ -139,8 +139,8 @@ footer ul{list-style:none;padding:0;margin:0;display:grid;gap:.5rem}
    <ul><li>Atendimento acolhedor e ético.</li><li>Ambiente organizado e confortável.</li><li>Espaço que acolhe a comunidade LGBTQ+.</li></ul>
    <a class="btn" href="#" data-wa>AGENDAR CONSULTA</a>
   </div>
-  <div class="pw">
-   <div class="ph" id="heroPh" role="img" aria-label="Espaço reservado para foto do psicólogo"><span>Foto do Wilson<br>(CONFIG.fotoHero)</span></div>
+    <div class="pw">
+   <div class="ph" id="heroPh"><img src="foto-wilson.png" alt="Wilson Marques, psicólogo clínico" width="405" height="610"></div>
    <div class="stat"><b>5,0 ★</b>400 avaliações no Google</div>
   </div>
  </div>
@@ -227,7 +227,7 @@ const CONFIG={
  endereco:"Avenida Adelino Cardana, 293, Bethaville (Sala 2302 / 23º andar), Barueri - SP, 06404-301",
  horarios:"Atendimento até às 20:00",
  mensagem:"Olá, Wilson! Gostaria de agendar uma consulta.",
- fotoHero:"",
+ fotoHero:"foto-wilson.png",
  temas:[["Ansiedade e estresse","Compreender gatilhos, aliviar a tensão do dia a dia e desenvolver formas mais leves de lidar com as pressões."],["Tristeza e desânimo","Um espaço para elaborar sentimentos, recuperar o ânimo e reencontrar sentido."],["Relacionamentos","Apoio para lidar com conflitos, comunicação e vínculos familiares, afetivos e profissionais."],["Autoconhecimento","Entender melhor quem você é, o que deseja e como lidar com suas escolhas."],["Momentos de transição e perda","Acompanhamento em mudanças, términos, lutos e outras fases difíceis da vida."],["Acolhimento LGBTQ+","Escuta respeitosa e sem julgamentos para a diversidade de orientações e identidades."]],
  revs:[["Ótimo profissional, a sala do dr é um ambiente acolhedor e organizado.","Avaliação no Google"],["Tenho tido uma experiência muito positiva com o Dr. Wilson. Ele é extremamente atencioso, acolhedor e conduz as sessões com muita empatia e profissionalismo.","Felipe Müller"],["O atendimento foi muito bom. Me senti confortável durante todo o tempo, pois o profissional demonstrou preocupação com o meu bem-estar. Ele foi atencioso e cuidadoso, o que fez com que eu me sentisse segura e bem acolhida.","Livia Batista Santos"],["Meu filho, em poucas sessões, mostrou uma evolução sem igual.","Avaliação no Google"],["Tive a oportunidade de conversar com ele para um trabalho da faculdade e a experiência foi excelente. Foi extremamente atencioso, respondeu todas as perguntas com muita clareza e demonstrou grande conhecimento e profissionalismo.","Gabby Amaral"],["Gente boa demais, dá a maior atenção ao cliente e amigos.","Avaliação no Google"]]
 };
@@ -244,7 +244,7 @@ $("#info").innerHTML=[[I.pin,"Endereço",CONFIG.endereco],[I.tel,"Telefone",`<a 
 $("#fct").innerHTML=`<li>${CONFIG.endereco}</li><li><a href="tel:+55${CONFIG.telefone}">${CONFIG.telefoneFmt}</a></li><li><a href="${waUrl}" target="_blank" rel="noopener noreferrer">WhatsApp</a></li><li>${CONFIG.horarios}</li>`;
 const gm="https://www.google.com/maps/search/?api=1&query="+encodeURIComponent("Avenida Adelino Cardana, 293, Bethaville, Barueri - SP");
 $("#map").innerHTML=`<div><p><b>Bethaville · Barueri</b><br>Sala 2302, 23º andar</p><a class="btn" href="${gm}" target="_blank" rel="noopener noreferrer">Abrir no Google Maps</a></div>`;
-if(CONFIG.fotoHero)$("#heroPh").innerHTML=`<img src="${CONFIG.fotoHero}" alt="Wilson Marques, psicólogo clínico" loading="eager">`;
+if(CONFIG.fotoHero)$("#heroPh").innerHTML=`<img src="${CONFIG.fotoHero}" alt="Wilson Marques, psicólogo clínico" width="405" height="610" loading="eager">`;
 
 /* menu */
 const bg=$("#bg"),nav=$("#nav");
